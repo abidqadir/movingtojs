@@ -1,51 +1,43 @@
-let input = document.querySelector('input')
 const btns = document.querySelectorAll('button')
-string = "" 
-
+let string = ''
+let output = document.querySelector('.calculator__output')
 for(btn of btns)
 {
 
- btn.addEventListener('click',(e)=>{
-   
-    if(e.target.innerHTML == "=") {
-        string=eval(string)
-        input.value = string
-        
-    }
-else if (e.target.innerHTML == 'ac')
-{
-    string = ""
-    input.value =string
-}
-    else if (e.target.innerHTML == 'del')
-    {
-        if ( typeof string == 'number'  )
-        
-        
+    btn.addEventListener('click',(e)=>{
+        if(e.target.innerHTML == '=')
+
         {
-            string = `${string}`
-            string =string.slice(0,-1)  
-            input.value=string
-           
-           
-            
+            string=eval(string)
+            output.innerHTML = string
+
+
         }
+        else if (e.target.innerHTML == 'AC')
+        {
+            string = ''
+            output.innerHTML = string
+        }
+
+        else if ( e.target.innerHTML == 'C')
+        {
+            if(typeof string == 'number')
+            {
+                string=eval(string)
+                string=string.slice(0,-1)
+                output.innerHTML= string
+            }
+            else {
+                string.slice(0,-1)
+                output.innerHTML= string
+            }
+        }
+
         else {
-            
-            string =string.slice(0,-1)  
-            input.value=string
-           
-            
+            string+=e.target.innerHTML
+            output.innerText = string
         }
-      }
 
-    else{
-        string+=e.target.innerHTML
-        input.value = string
+    })
 
-    }
- }
- )
-}
-
-
+} 
