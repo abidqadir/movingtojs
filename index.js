@@ -19,17 +19,18 @@ for(btn of btns)
             output.innerHTML = string
         }
 
-        else if ( e.target.innerHTML == 'C')
+        else if (e.target.innerHTML == 'C')
         {
             if(typeof string == 'number')
             {
-                string=eval(string)
-                string=string.slice(0,-1)
-                output.innerHTML= string
+                string = `${string}`
+                string =string.slice(0,-1)
+                output.innerHTML = string
             }
             else {
-                string.slice(0,-1)
-                output.innerHTML= string
+                string =string.slice(0,-1)
+                output.innerHTML = string
+                
             }
         }
 
