@@ -1,44 +1,45 @@
-const btns = document.querySelectorAll('button')
-let string = ''
+
+const btns =document.querySelectorAll('button')
 let output = document.querySelector('.calculator__output')
-for(btn of btns)
+let string = ''
+
+
+for (btn of btns)
 {
 
-    btn.addEventListener('click',(e)=>{
-        if(e.target.innerHTML == '=')
+        btn.addEventListener("click", (e)=>{
 
-        {
-            string=eval(string)
-            output.innerHTML = string
-
-
-        }
-        else if (e.target.innerHTML == 'AC')
-        {
-            string = ''
-            output.innerHTML = string
-        }
-
-        else if (e.target.innerHTML == 'C')
-        {
-            if(typeof string == 'number')
+            if (e.target.innerHTML == '=')
             {
-                string = `${string}`
-                string =string.slice(0,-1)
-                output.innerHTML = string
-            }
-            else {
-                string =string.slice(0,-1)
-                output.innerHTML = string
+                if(string.length == 0 )
+                {
+                    string =''
+                    output.innerHTML =string
+                }
+                else 
+                {
+                
+                    string=eval(string)
+                    output.innerHTML = string    
+                }
+                
                 
             }
-        }
+            else if (e.target.innerHTML == 'AC')
+            {
+                string = ''
+                output.innerHTML = string
+            }
 
-        else {
-            string+=e.target.innerHTML
-            output.innerText = string
-        }
+            else if (e.target.innerHTML == 'C')
+            {   string = `${string}`
+                string = string.slice(0,-1)
+                output.innerHTML=string
+            }
 
-    })
-
-} 
+            else{
+                string+=e.target.innerHTML
+                output.innerHTML= string
+            }
+        })
+}
