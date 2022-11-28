@@ -1,45 +1,33 @@
 
-const btns =document.querySelectorAll('button')
-let output = document.querySelector('.calculator__output')
-let string = ''
+const input1 = document.querySelector('.in1')
+const h1 = document.querySelector("h1")
 
 
-for (btn of btns)
-{
 
-        btn.addEventListener("click", (e)=>{
+const div1 = document.querySelector('.a')
 
-            if (e.target.innerHTML == '=')
-            {
-                if(string.length == 0 )
-                {
-                    string =''
-                    output.innerHTML =string
-                }
-                else 
-                {
-                
-                    string=eval(string)
-                    output.innerHTML = string    
-                }
-                
-                
-            }
-            else if (e.target.innerHTML == 'AC')
-            {
-                string = ''
-                output.innerHTML = string
-            }
+input1.addEventListener('click', ()=>{
+    h1.innerHTML = input1.value
 
-            else if (e.target.innerHTML == 'C')
-            {   string = `${string}`
-                string = string.slice(0,-1)
-                output.innerHTML=string
-            }
+    div2.style.background=input1.value
+    div2.style.height = '200px'
+    div2.style.width = '200px'
+})
 
-            else{
-                string+=e.target.innerHTML
-                output.innerHTML= string
-            }
-        })
-}
+
+
+
+
+
+const div2 = document.querySelector('.b')
+const input2 = document.querySelector('.in2')
+input2.addEventListener('click', ()=>{
+    
+div1.style.background=input2.value
+div1.style.height = '200px'
+div1.style.width = '200px'
+div1.style.margin = '200px'
+
+})
+
+
