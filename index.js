@@ -1,4 +1,4 @@
-
+/*
  
 let btns = document.querySelectorAll("button")
 let user = "player1" 
@@ -19,7 +19,7 @@ for(btn of btns){
  btn.addEventListener("click", (b)=>{
     if(user == "player1")
     {
-        if (btn1 == "X" && btn2 == "X"&& btn3 == "X" )
+        if (btn1 == "X" && btn2 == "X" && btn3 == "X" )
         {
             
         b.target.innerHTML= "X"
@@ -36,3 +36,18 @@ for(btn of btns){
 
  })   
 }
+
+
+let j =5;
+let n = 1;
+for(let i = 1;i<=j;i++){
+    
+}
+console.log(n)
+
+*/
+
+let arr = [2,3,4,5,6]
+
+console.log(arr.splice(3,1,20))
+console.log(arr)
