@@ -14,20 +14,16 @@ address:{ city:"karachi",
 
 */
 
-let sec =1
+let sec =10
 function sayHello()
-
-
 {
-    console.log("wait biru", sec)
-    sec++
-
-    if(sec==6)
-    {
-        clearInterval(id)
-        console.log("wait is over 😂")
-    }
-    
+console.log(sec)
+sec--
+if(sec == 0){
+    clearInterval(timer)
+    console.log("times up 😜")
+}
 }
 
-let id = setInterval(sayHello,100)
+
+timer = setInterval(sayHello,1000)
